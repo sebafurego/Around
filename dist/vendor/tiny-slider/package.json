@@ -2,7 +2,7 @@
   "_args": [
     [
       "tiny-slider@2.9.3",
-      "/Users/rokaux/Sites/around-new"
+      "/Users/alisapogarskaya/Documents/GitHub/Around"
     ]
   ],
   "_from": "tiny-slider@2.9.3",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/tiny-slider/-/tiny-slider-2.9.3.tgz",
   "_spec": "2.9.3",
-  "_where": "/Users/rokaux/Sites/around-new",
+  "_where": "/Users/alisapogarskaya/Documents/GitHub/Around",
   "author": {
     "name": "ganlanyuan",
     "email": "ganlanyuan@gmail.com"

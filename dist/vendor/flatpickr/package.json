@@ -1,27 +1,32 @@
 {
-  "_from": "flatpickr@^4.6.9",
+  "_args": [
+    [
+      "flatpickr@4.6.9",
+      "/Users/alisapogarskaya/Documents/GitHub/Around"
+    ]
+  ],
+  "_from": "flatpickr@4.6.9",
   "_id": "flatpickr@4.6.9",
   "_inBundle": false,
   "_integrity": "sha512-F0azNNi8foVWKSF+8X+ZJzz8r9sE1G4hl06RyceIaLvyltKvDl6vqk9Lm/6AUUCi5HWaIjiUbk7UpeE/fOXOpw==",
   "_location": "/flatpickr",
   "_phantomChildren": {},
   "_requested": {
-    "type": "range",
+    "type": "version",
     "registry": true,
-    "raw": "flatpickr@^4.6.9",
+    "raw": "flatpickr@4.6.9",
     "name": "flatpickr",
     "escapedName": "flatpickr",
-    "rawSpec": "^4.6.9",
+    "rawSpec": "4.6.9",
     "saveSpec": null,
-    "fetchSpec": "^4.6.9"
+    "fetchSpec": "4.6.9"
   },
   "_requiredBy": [
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/flatpickr/-/flatpickr-4.6.9.tgz",
-  "_shasum": "9a13383e8a6814bda5d232eae3fcdccb97dc1499",
-  "_spec": "flatpickr@^4.6.9",
-  "_where": "/Users/rokaux/Sites/around-new",
+  "_spec": "4.6.9",
+  "_where": "/Users/alisapogarskaya/Documents/GitHub/Around",
   "author": {
     "name": "Gregory",
     "email": "gregory.mkv@gmail.com"
@@ -34,8 +39,6 @@
   "bugs": {
     "url": "https://github.com/chmln/flatpickr/issues"
   },
-  "bundleDependencies": false,
-  "deprecated": false,
   "description": "A lightweight, powerful javascript datetime picker",
   "devDependencies": {
     "@babel/core": "^7.12.10",

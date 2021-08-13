@@ -2,7 +2,8 @@ extends partials/layout
 
 //- Override default config variables
 append config
-  - var vendorScripts = ['parallax-js/dist/parallax.min.js']
+  - var vendorStyles = ['tiny-slider/dist/tiny-slider.css', 'lightgallery.js/dist/css/lightgallery.min.css']
+  - var vendorScripts = ['parallax-js/dist/parallax.min.js', 'tiny-slider/dist/min/tiny-slider.js', 'lightgallery.js/dist/js/lightgallery.min.js', 'lg-video.js/dist/lg-video.min.js']
   - var parentMenu = 'Home'
   - var pageTitle = 'Multipurpose Bootstrap Template'
 
@@ -20,25 +21,26 @@ block content
         .col-xl-6.col-lg-5.d-flex.justify-content-end
           .pt-2.mx-auto.mb-5.mb-lg-0.ms-lg-0.me-xl-7.text-center.text-lg-start(style='max-width: 495px;')
             h1.display-4.text-light.pb-2
-              span.fw-light Have a look 
-              | Around!
-            p.h4.fw-light.text-light.opacity-70.line-height-base And you will find everything you need to build a great looking website.
+              span.fw-light Заголовок 
+              | главный
+            p.h4.fw-light.text-light.opacity-70.line-height-base.mb-5 And you will find everything you need to build a great looking website.
+            .row.justify-content-start
+              .col-sm.mb-4.mb-sm-0
+                button(type="button").btn.btn-primary.btn-lg.w-100.mb-2 Начать проект
+                //.h1.text-light.mb-1 14
+                //.h5.text-light.fw-normal.opacity-70.mb-2 Demo Homepages
+                //span.badge.rounded-pill.bg-success More coming
+              .col-sm.mb-4.mb-sm-0
+                a(href="#", role="button").btn-market.btn-apple.btn-lg.w-100
+                  span.btn-market-subtitle Информация в формате PDF
+                  span.btn-market-title Скачать презентацию
+                //.h1.text-light.mb-1 50+
+            hr.hr-light.mt-5.mb-0
             a(href='#demos' data-scroll).d-inline-flex.align-items-center.text-decoration-none.pt-2.mt-4.mb-5
               span.btn.btn-icon.rounded-circle.border-light.flex-shrink-0.px-3
                 i.ai-arrow-down.h4.text-light.my-1
-              span.ms-3.text-light.fw-medium View Demos
-            hr.hr-light.mt-0.mb-5
-            .row
-              .col-sm-4.mb-4.mb-sm-0
-                .h1.text-light.mb-1 14
-                .h5.text-light.fw-normal.opacity-70.mb-2 Demo Homepages
-                span.badge.rounded-pill.bg-success More coming
-              .col-sm-4.mb-4.mb-sm-0
-                .h1.text-light.mb-1 50+
-                .h5.text-light.fw-normal.opacity-70.mb-1 Flexible Components
-              .col-sm-4
-                .h1.text-light.mb-1 47
-                .h5.text-light.fw-normal.opacity-70.mb-1 Inner Page Templates
+              span.ms-3.text-light.fw-medium Подробнее
+
         .col-xl-6.col-lg-7
           .parallax.ms-lg-n5(style='max-width: 920px;')
             .parallax-layer.position-relative(data-depth='0.1')
@@ -60,12 +62,147 @@ block content
             .parallax-layer(data-depth='0.35')
               img(src='img/demo/presentation/intro/layer09.png' alt='Layer')
 
-
-  // Demos
+  // Services
   section#demos.bg-secondary
     .container.pt-5.pb-4.py-md-6.py-lg-7
       .text-center.mb-5.pt-3.pt-lg-4
-        h2.h1.mb-4 Homepage <span class='bg-faded-primary rounded text-primary px-3 py-2'>Demos</span>
+        h2.h1.mb-4 Виды <span class='bg-faded-primary rounded text-primary px-3 py-2'>услуг</span>
+        p.text-muted Choose from pre-built layouts of our unique homepage demos
+      .row
+        .col-lg.col-sm.mb-grid-gutter.pb-3
+          a(href='help-single-topic.html').card.h-100.border-0.shadow.card-hover
+            .card-body.ps-grid-gutter.pe-grid-gutter.text-center
+              i.ai-user-check.h2.text-primary.mt-2.mb-4
+              h3.h5 Managing account
+              p.fs-sm.text-body Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam, eaque ipsa quae.
+        .col-lg.col-sm.mb-grid-gutter.pb-3
+          a(href='help-single-topic.html').card.h-100.border-0.shadow.card-hover
+            .card-body.ps-grid-gutter.pe-grid-gutter.text-center
+              i.ai-settings.h2.text-primary.mt-2.mb-4
+              h3.h5 Managing account
+              p.fs-sm.text-body Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam, eaque ipsa quae.
+        .col-lg.col-sm.mb-grid-gutter.pb-3
+          a(href='help-single-topic.html').card.h-100.border-0.shadow.card-hover
+            .card-body.ps-grid-gutter.pe-grid-gutter.text-center
+              i.ai-credit-card.h2.text-primary.mt-2.mb-4
+              h3.h5 Payment options
+              p.fs-sm.text-body Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam, eaque ipsa quae.
+
+  // Progressbar
+  section#demos.bg-secondary
+    .container.pt-0.pb-4
+      .text-center.mb-5.pt-3.pt-lg-4
+        span.h6 Индивидуальная подход
+        h2.h1.mt-4.mb-4 Процесс <span class='bg-faded-primary rounded text-primary px-3 py-2'>Разработки</span>
+        p.text-muted Choose from pre-built layouts of our unique homepage demos
+    .row
+      .col-lg-2.offset-lg-1.col-sm-3.col-6.mb-grid-gutter.text-center.text-sm-start
+        img(src='img/demo/creative-agency/services/01.svg' alt='Strategy' width='74').d-inline-block.mb-3
+        h3.h5 Strategy
+        ul.list-unstyled
+          li.mb-0 Brand Architecture
+          li.mb-0 Key Messaging
+          li.mb-0 User Personas
+        span.fancy-link.fs-sm
+          | Link
+      .col-lg-2.offset-lg-1.col-sm-3.col-6.mb-grid-gutter.text-center.text-sm-start
+        img(src='img/demo/creative-agency/services/02.svg' alt='Digital' width='85').d-inline-block.mb-3
+        h3.h5 Digital
+        ul.list-unstyled
+          li.mb-0 UI/UX
+          li.mb-0 Web/Mobile Apps
+          li.mb-0 Websites
+          li.mb-0 Design Systems
+          li.mb-0 Front-End
+          li.mb-0 Back-End
+      .col-lg-2.offset-lg-1.col-sm-3.col-6.mb-grid-gutter.text-center.text-sm-start
+        img(src='img/demo/creative-agency/services/03.svg' alt='Visual Identity' width='78').d-inline-block.mb-3
+        h3.h5 Visual Identity
+        ul.list-unstyled
+          li.mb-0 Logo Design
+          li.mb-0 Visual Identity
+          li.mb-0 Brand Guidelines
+          li.mb-0 Illustration
+      .col-lg-2.offset-lg-1.col-sm-3.col-6.mb-grid-gutter.text-center.text-sm-start
+        img(src='img/demo/creative-agency/services/04.svg' alt='Motion' width='83').d-inline-block.mb-3
+        h3.h5 Motion
+        ul.list-unstyled
+          li.mb-0 Promo Videos
+          li.mb-0 Motion graphics
+
+  // Principles
+  section#demos.bg-secondary
+    .container.pt-5.pb-4.py-md-6.py-lg-7
+      .text-center.mb-5.pt-3.pt-lg-4
+        span.h6 Подзаголовок
+        h2.h1.mt-4.mb-4 Наши <span class='bg-faded-primary rounded text-primary px-3 py-2'>принципы</span>
+        p.text-muted Choose from pre-built layouts of our unique homepage demos
+      .row
+        .col-lg.col-sm.mb-grid-gutter.pb-3
+          div.card.h-100.border-0.shadow.card-hover
+            .card-body.ps-grid-gutter.pe-grid-gutter.text-center
+              i.ai-user-check.h2.text-primary.mt-2.mb-4
+              h3.h5 Managing account
+              p.fs-sm.text-body Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam, eaque ipsa quae.
+        .col-lg.col-sm.mb-grid-gutter.pb-3
+          div.card.h-100.border-0.shadow.card-hover
+            .card-body.ps-grid-gutter.pe-grid-gutter.text-center
+              i.ai-settings.h2.text-primary.mt-2.mb-4
+              h3.h5 Managing account
+              p.fs-sm.text-body Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam, eaque ipsa quae.
+        .col-lg.col-sm.mb-grid-gutter.pb-3
+          div.card.h-100.border-0.shadow.card-hover
+            .card-body.ps-grid-gutter.pe-grid-gutter.text-center
+              i.ai-credit-card.h2.text-primary.mt-2.mb-4
+              h3.h5 Payment options
+              p.fs-sm.text-body Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudan, totam rem aperiam, eaque ipsa quae.
+
+  // Solutions and competencies
+  section.container.py-5.my-4.my-sm-0.py-sm-6.py-md-7
+    .text-center.mb-5.pt-3.pt-lg-4
+      span.h6 Подзаголовок
+      h2.h1.mt-4.mb-4 Решения и <span class='bg-faded-primary rounded text-primary px-3 py-2'>компетенции</span>
+      p.text-muted Choose from pre-built layouts of our unique homepage demos
+    .row.pb-2
+      .col-lg-6
+        #faq.accordion
+
+          .accordion-item.shadow
+            h2#faq-heading-1.accordion-header
+              button(type='button' data-bs-toggle='collapse' data-bs-target='#faq-content-1' aria-expanded='true' aria-controls='faq-content-1').accordion-button How can I create a list of frequent destinations?
+            #faq-content-1.accordion-collapse.collapse.show(aria-labelledby='faq-heading-1' data-bs-parent='#faq')
+              .accordion-body
+                .fs-sm At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+          .accordion-item.shadow
+            h2#faq-heading-2.accordion-header
+              button(type='button' data-bs-toggle='collapse' data-bs-target='#faq-content-2' aria-expanded='false' aria-controls='faq-content-2').accordion-button.collapsed What will happen after I sign up?
+            #faq-content-2.accordion-collapse.collapse(aria-labelledby='faq-heading-2' data-bs-parent='#faq')
+              .accordion-body
+                .fs-sm At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+          .accordion-item.shadow
+            h2#faq-heading-3.accordion-header
+              button(type='button' data-bs-toggle='collapse' data-bs-target='#faq-content-3' aria-expanded='false' aria-controls='faq-content-3').accordion-button.collapsed Do I have to confirm all bookings?
+            #faq-content-3.accordion-collapse.collapse(aria-labelledby='faq-heading-3' data-bs-parent='#faq')
+              .accordion-body
+                .fs-sm At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+          .accordion-item.shadow
+            h2#faq-heading-4.accordion-header
+              button(type='button' data-bs-toggle='collapse' data-bs-target='#faq-content-4' aria-expanded='false' aria-controls='faq-content-4').accordion-button.collapsed What do I get for the commission I pay?
+            #faq-content-4.accordion-collapse.collapse(aria-labelledby='faq-heading-4' data-bs-parent='#faq')
+              .accordion-body
+                .fs-sm At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+
+      .d-none.d-lg-block.col-lg-5.offset-lg-1
+        img(src='img/demo/booking/illustration.svg' alt='Illustration')
+
+  // Portfolio
+  section#demos.bg-secondary
+    .container.pt-5.pb-1.py-md-6.py-lg-7
+      .text-center.mb-5.pt-3.pt-lg-4
+        h2.h1.mb-4 Наше <span class='bg-faded-primary rounded text-primary px-3 py-2'>портфолио</span>
         p.text-muted Choose from pre-built layouts of our unique homepage demos
       .row
         .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
@@ -74,91 +211,121 @@ block content
               img(src='img/demo/presentation/demos/business-consulting.jpg' alt='Business Consulting').card-img
             h3.h5.nav-heading-title.mb-0 Business Consulting
             span.fs-sm.fw-normal.text-muted Corporate, Business, Agency
+          div.text-center.mt-3
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary #бизнес
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary.ms-2 #успех
         .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-shop-homepage.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/shop-homepage.jpg' alt='Shop Homepage').card-img
             h3.h5.nav-heading-title.mb-0 Shop Homepage
             span.fs-sm.fw-normal.text-muted E-Commerce, Retail, Electronics, Fashion
+          div.text-center.mt-3
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary #бизнес
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary.ms-2 #успех
         .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-booking-directory.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/booking.jpg' alt='Booking &amp; Directory').card-img
             h3.h5.nav-heading-title.mb-0 Booking / Directory
             span.fs-sm.fw-normal.text-muted Listings, Flights, Destinations
+          div.text-center.mt-3
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary #бизнес
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary.ms-2 #успех
         .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-creative-agency.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/creative-agency.jpg' alt='Creative Agency').card-img
             h3.h5.nav-heading-title.mb-0 Creative Agency
             span.fs-sm.fw-normal.text-muted Creative Business, Portfolio, Agency
+          div.text-center.mt-3
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary #бизнес
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary.ms-2 #успех
         .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-web-studio.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/web-studio.jpg' alt='Web Studio').card-img
             h3.h5.nav-heading-title.mb-0 Web Studio
             span.fs-sm.fw-normal.text-muted Web Design, Portfolio, Agency
+          div.text-center.mt-3
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary #бизнес
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary.ms-2 #успех
         .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-product-software.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/software-landing.jpg' alt='Product Landing - Software').card-img
             h3.h5.nav-heading-title.mb-0 Product Landing - Software
             span.fs-sm.fw-normal.text-muted Software, Showcase, Landing Page
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+          div.text-center.mt-3
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary #бизнес
+            a(href='demo-business-consulting.html')
+              span.badge.bg-primary.ms-2 #успех
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-product-gadget.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/gadget-landing.jpg' alt='Product Landing - Gadget').card-img
             h3.h5.nav-heading-title.mb-0 Product Landing - Gadget
             span.fs-sm.fw-normal.text-muted Gadget, Showcase, Landing Page
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-mobile-app.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/mobile-app.jpg' alt='Mobile App Showcase').card-img
             h3.h5.nav-heading-title.mb-0 Mobile App Showcase
             span.fs-sm.fw-normal.text-muted Mobile App, Showcase, Landing
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-coworking-space.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/coworking.jpg' alt='Coworkin Space').card-img
             h3.h5.nav-heading-title.mb-0 Coworking Space
             span.fs-sm.fw-normal.text-muted Coworking Space Landing Page
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-event-landing.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/event-landing.jpg' alt='Event Landing').card-img
             h3.h5.nav-heading-title.mb-0 Event Landing
             span.fs-sm.fw-normal.text-muted Landing Page, Event, Countdown, Tickets
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='index.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/template-presentation.jpg' alt='Web Template Presentation').card-img
             h3.h5.nav-heading-title.mb-0 Web Template Presentation
             span.fs-sm.fw-normal.text-muted Showcase your Web Template features beautifully
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-marketing-seo.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/marketing-seo.jpg' alt='Digital Marketing & SEO').card-img
             h3.h5.nav-heading-title.mb-0 Digital Marketing &amp; SEO
             span.fs-sm.fw-normal.text-muted Marketing services, Agency, Portfolio
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-food-blog.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/food-blog.jpg' alt='Food Blog').card-img
             h3.h5.nav-heading-title.mb-0 Food Blog
             span.fs-sm.fw-normal.text-muted Cooking, Recipes, Personal Blog
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           a(href='demo-personal-portfolio.html').d-block.nav-heading.text-center
             .card.card-hover.border-0.shadow-lg.mb-4
               img(src='img/demo/presentation/demos/personal-portfolio.jpg' alt='Personal Portfolio').card-img
             h3.h5.nav-heading-title.mb-0 Personal Portfolio
             span.fs-sm.fw-normal.text-muted Cooking, Recipes, Personal Blog
-        .col-lg-4.col-sm-6.mb-grid-gutter.pb-3
+        //.col-lg-4.col-sm-6.mb-grid-gutter.pb-3
           img(src='img/demo/presentation/demos/coming.png' alt='Coming').d-block.mb-4
           h3.h5.text-center.mb-0 Coming Soon
 
 
   // Components
-  section.bg-gradient.py-5.py-md-6.py-lg-7
+  //section.bg-gradient.py-5.py-md-6.py-lg-7
     .container-fluid.py-3.py-lg-4.overflow-hidden
       .row.align-items-center
         .col-xl-6.col-lg-5.d-flex.justify-content-end.mb-5.mb-lg-0
@@ -197,7 +364,7 @@ block content
 
 
   // Inner Pages
-  section.py-5.py-md-6.py-lg-7
+  //section.py-5.py-md-6.py-lg-7
     .container.pb-3.pt-4.pb-lg-2
       .row.justify-content-center.mb-4.pb-2
         .col-xl-6.col-lg-7.col-md-8
@@ -399,7 +566,7 @@ block content
 
 
   // Mobile Interface
-  section.bg-secondary.py-5.py-md-6.py-lg-7
+  //section.bg-secondary.py-5.py-md-6.py-lg-7
     .container.py-3.py-lg-4
       .row.align-items-center
         .col-md-6.mb-5.mb-md-0
@@ -415,7 +582,7 @@ block content
   
 
   // Features
-  section.container.py-5.py-md-6.py-lg-7
+  //section.container.py-5.py-md-6.py-lg-7
     .text-center.mb-5.pt-3.pt-lg-4
       h2.h1 Around <span class='bg-faded-primary rounded text-primary px-3 py-2'>Feature Highlights</span>
     .row.pt-3.pt-lg-4
@@ -483,33 +650,134 @@ block content
             p.fs-md.mb-0 Download package includes links to online documentation. It covers all crucial information about how to get started, customize template and components usage.
         h3.h5 ...and much more
 
+  // News
+  .position-relative.bg-secondary(style='height: 420px;')
+    .shape.shape-bottom.shape-curve.bg-body
+      svg(xmlns='http://www.w3.org/2000/svg' viewBox='0 0 3000 185.4')
+        path(fill='currentColor' d='M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z')
+  section.container.position-relative.zindex-5.pt-5.pb-6.pt-md-6(style='margin-top: -420px;')
+    .text-center.mb-5.pt-3.pt-lg-4
+      span.h6 Подзаголовок
+      h2.h1.mt-4.mb-4 Полезные <span class='bg-faded-primary rounded text-primary px-3 py-2'>статьи</span>
+      p.text-muted Choose from pre-built layouts of our unique homepage demos
+    .tns-carousel-wrapper
+      .tns-carousel-inner(data-carousel-options='{"items": 2, "controls": false, "autoHeight": true, "responsive": {"0":{"items":1, "gutter": 16},"500":{"items":2, "gutter": 16},"850":{"items":3, "gutter": 16}, "1100":{"items":3, "gutter": 23}}}')
+      
+        // Article
+        .pb-2
+          article.card.card-hover.h-100.border-0.shadow.pt-4.pb-5.mx-1
+            span.badge.badge-lg.badge-floating.badge-floating-end.bg-success New
+            .card-body.pt-5.px-4.px-xl-5
+              h3.h4.nav-heading.mb-4
+                a(href='#') 5 Questions Every Business Consultant Must Ask During a Sales Call
+              p.mb-4 Равным образом, разбавленное изрядной долей эмпатии, рациональное мышление прекрасно подходит для реализации глубокомысленных рассуждений.
+              a(href='demo-business-consulting.html')
+                span.badge.bg-secondary #бизнес
+              a(href='demo-business-consulting.html')
+                span.badge.bg-secondary.ms-2 #успех
+            .px-4.px-xl-5.pt-2
+              .mt-3.text-end.text-nowrap
+                a(href='#').meta-link.fs-xs
+                  i.ai-calendar.me-1.mt-n1
+                  | &nbsp;12 февраля 2021
+      
+        // Article
+        .pb-2
+          article.card.card-hover.h-100.border-0.shadow.pt-4.pb-5.mx-1
+            span.badge.badge-lg.badge-floating.badge-floating-end.bg-success New
+            .card-body.pt-5.px-4.px-xl-5
+              h3.h4.nav-heading.mb-4
+                a(href='#') 5 Questions Every Business Consultant Must Ask During a Sales Call
+              p.mb-4 Равным образом, разбавленное изрядной долей эмпатии, рациональное мышление прекрасно подходит для реализации глубокомысленных рассуждений.
+              a(href='demo-business-consulting.html')
+                span.badge.bg-secondary #бизнес
+              a(href='demo-business-consulting.html')
+                span.badge.bg-secondary.ms-2 #успех
+            .px-4.px-xl-5.pt-2
+              .mt-3.text-end.text-nowrap
+                a(href='#').meta-link.fs-xs
+                  i.ai-calendar.me-1.mt-n1
+                  | &nbsp;12 февраля 2021
+      
+        // Article
+        .pb-2
+          article.card.card-hover.h-100.border-0.shadow.pt-4.pb-5.mx-1
+            span.badge.badge-lg.badge-floating.badge-floating-end.bg-success New
+            .card-body.pt-5.px-4.px-xl-5
+              h3.h4.nav-heading.mb-4
+                a(href='#') 5 Questions Every Business Consultant Must Ask During a Sales Call
+              p.mb-4 Равным образом, разбавленное изрядной долей эмпатии, рациональное мышление прекрасно подходит для реализации глубокомысленных рассуждений.
+              a(href='demo-business-consulting.html')
+                span.badge.bg-secondary #бизнес
+              a(href='demo-business-consulting.html')
+                span.badge.bg-secondary.ms-2 #успех
+            .px-4.px-xl-5.pt-2
+              .mt-3.text-end.text-nowrap
+                a(href='#').meta-link.fs-xs
+                  i.ai-calendar.me-1.mt-n1
+                  | &nbsp;12 февраля 2021
+      
+        // Article
+        .pb-2
+          article.card.card-hover.h-100.border-0.shadow.pt-4.pb-5.mx-1
+            span.badge.badge-lg.badge-floating.badge-floating-end.bg-success New
+            .card-body.pt-5.px-4.px-xl-5
+              h3.h4.nav-heading.mb-4
+                a(href='#') 5 Questions Every Business Consultant Must Ask During a Sales Call
+              p.mb-4 Равным образом, разбавленное изрядной долей эмпатии, рациональное мышление прекрасно подходит для реализации глубокомысленных рассуждений.
+              span.badge.bg-secondary #бизнес
+              span.badge.bg-secondary.ms-2 #успех
+            .px-4.px-xl-5.pt-2
+              .mt-3.text-end.text-nowrap
+                a(href='#').meta-link.fs-xs
+                  i.ai-calendar.me-1.mt-n1
+                  | &nbsp;12 февраля 2021
 
-//- Footer
-block footer
-  footer.footer.bg-dark.pt-5.pt-md-6.pt-lg-7
-    .container.pt-3.pt-md-0
-      .pb-md-4.text-center
-        h3.text-light.fw-light.mb-3 Still not convinced?
-        h2.text-light.mb-5 Add premium support and lifetime updates to this.
-        a(href='https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/' target='_blank' rel='noopener').btn.btn-primary
-          i.ai-shopping-cart.fs-lg.me-2
-          | Buy Around
-      hr.hr-light.my-5
+  // Submit request
+  section.bg-secondary.py-6
+    .container.text-center
+      h2.h3.pb-2.mb-3 Заголовок
+      p.fs-sm.mb-5 Choose from pre-built layouts of our unique homepage demos
       .row.justify-content-center
-        .col-lg-6.col-md-7.pb-md-4.text-center
-          h4.text-light.mb-grid-gutter Subscribe to Newsletter
-          form(action='https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;id=29ca296126' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate).subscription-form.validate
-            .input-group.flex-nowrap
-              i.ai-mail.position-absolute.top-50.start-0.translate-middle-y.text-muted.ms-3
-              input(type='email' name='EMAIL' placeholder='Your email').form-control.rounded-start
-              button(type='submit' name='subscribe').btn.btn-primary Subscribe*
-            // real people should not fill this in and expect good things - do not remove this or risk form bot signups
-            div(style='position: absolute; left: -5000px;' aria-hidden='true')
-              input(type='text' name='b_c7103e2c981361a6639545bd5_29ca296126' tabindex='-1').subscription-form-antispam
-            div.form-text.text-light.opacity-50 *Subscribe to our newsletter to receive early discount offers and new templates info.
-            .subscription-status
-      hr.hr-light.my-5
-      p.fs-sm.text-center.mb-0.pb-5
-        span.text-light.opacity-50.me-1 © All rights reserved. Made by
-        a(href='https://createx.studio/' target='_blank' rel='noopener').nav-link-style.nav-link-light Createx Studio
+        .col-lg-3.col-md-5.col-sm-8.mb-4.mb-sm-0
+          button(type="button").btn.btn-primary.btn-lg.w-100.mb-2 Начать проект
+          //.h1.text-light.mb-1 14
+          //.h5.text-light.fw-normal.opacity-70.mb-2 Demo Homepages
+          //span.badge.rounded-pill.bg-success More coming
+        .col-lg-3.col-md-5.col-sm-8.mb-4.mb-sm-0
+          a(href="#", role="button").btn-market.btn-apple.btn-lg.w-100
+            span.btn-market-subtitle Информация в формате PDF
+            span.btn-market-title Скачать презентацию
+          //.h1.text-light.mb-1 50+
+      
+  // Footer
+  include partials/footer-default
+
+  //block footer
+    footer.footer.bg-dark.pt-5.pt-md-6.pt-lg-7
+      .container.pt-3.pt-md-0
+        .pb-md-4.text-center
+          h3.text-light.fw-light.mb-3 Still not convinced?
+          h2.text-light.mb-5 Add premium support and lifetime updates to this.
+          a(href='https://themes.getbootstrap.com/product/around-multipurpose-template-ui-kit/' target='_blank' rel='noopener').btn.btn-primary
+            i.ai-shopping-cart.fs-lg.me-2
+            | Buy Around
+        hr.hr-light.my-5
+        .row.justify-content-center
+          .col-lg-6.col-md-7.pb-md-4.text-center
+            h4.text-light.mb-grid-gutter Subscribe to Newsletter
+            form(action='https://studio.us12.list-manage.com/subscribe/post?u=c7103e2c981361a6639545bd5&amp;id=29ca296126' method='post' name='mc-embedded-subscribe-form' target='_blank' novalidate).subscription-form.validate
+              .input-group.flex-nowrap
+                i.ai-mail.position-absolute.top-50.start-0.translate-middle-y.text-muted.ms-3
+                input(type='email' name='EMAIL' placeholder='Your email').form-control.rounded-start
+                button(type='submit' name='subscribe').btn.btn-primary Subscribe*
+              // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+              div(style='position: absolute; left: -5000px;' aria-hidden='true')
+                input(type='text' name='b_c7103e2c981361a6639545bd5_29ca296126' tabindex='-1').subscription-form-antispam
+              div.form-text.text-light.opacity-50 *Subscribe to our newsletter to receive early discount offers and new templates info.
+              .subscription-status
+        hr.hr-light.my-5
+        p.fs-sm.text-center.mb-0.pb-5
+          span.text-light.opacity-50.me-1 © All rights reserved. Made by
+          a(href='https://createx.studio/' target='_blank' rel='noopener').nav-link-style.nav-link-light Createx Studio
         
